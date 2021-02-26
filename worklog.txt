@@ -1,2 +1,19 @@
 8:00AM - Initialize app, add components directory, reorganize app. files. Begin researching reference sites for eay-to-use recipe apps in React
 
+8:20AM - Sketch first version of component tree, add png to repo
+
+8:25AM - Add initial Component files
+
+8:30AM - Begin completing initial version of components
+
+9:10AM - Continue tinkering with components to build out initial static site, fix compiling errors
+
+9:45AM - Continue tinkering with components to build out initial static site
+
+10:15AM - Watch tutorials on recipe box app creation in React
+
+10:40AM - Continue navigating sea of recipebox tutorials
+
+11:00AM - feeling directionless, work through LHTP lessons to begin building recipebox-esque site that uses similar features to tap-room redux project
+
+11:30AM - continue adapting LHTP lessons/convert to recipe box app
