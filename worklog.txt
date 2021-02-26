@@ -1,0 +1,2 @@
+8:00AM - Initialize app, add components directory, reorganize app. files. Begin researching reference sites for eay-to-use recipe apps in React
+
