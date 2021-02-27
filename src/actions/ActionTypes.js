@@ -1,0 +1,4 @@
+export const DELETE_RECIPE = 'DELETE_RECIPE';
+export const TOGGLE_FORM = 'TOGGLE_FORM';
+export const TOGGLE_EDIT = 'TOGGLE_EDIT';
+export const SELECT_RECIPE = 'SELECT_RECIPE'
