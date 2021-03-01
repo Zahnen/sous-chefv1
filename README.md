@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Sous Chef
+### A React application with Redux and NoSQL, February 26, 2021
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### By [Zahnen Garner](https://www.github.com/zahnen)
 
-## Available Scripts
+---  
 
-In the project directory, you can run:
+_Sous Chef is a community-based recipe development app for non-professionals. Sous Chef is being developed as an independent capstone project while studying at Epicodus and is currently a work in progress._
 
-### `npm start`
+---  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🔧 Setup/Installation Instructions
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### If you would like to run the webpage locally
 
-### `npm test`
+* _Open your git-capable command line program (I recommend Terminal on Mac or Git Bash on PC)_
+* _Ensure you are within the directory you'd like the file to be created in._
+* _Enter the command `git clone https://github.com/Zahnen/tap-room-redux` in your command line_
+* _Once cloned, use the `cd ` command to navigate to the directory created in the previous step._
+* _You must have node.js installed in order to run the webpage successfully. If you do not have node.js installed, find more information and download it [here](https://nodejs.org/en/download/)_
+* _Once in the newly cloned directory, run `npm install` in your command line to install the necessary packages and dependencies._
+* _To open the webpage in your default browser, run "$ npm start"._
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---  
 
-### `npm run build`
+## 📐 Testing/Test Specs
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To review all specs tested in Jest, navigate to the `__tests__` directory to view all 6 testing suites.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### If you would like to run the tests locally
+* _Clone the repository and run the install command per the instructions in "Setup/Installation Instructions" if you have not already done so_
+* _Once cloned, use the `cd ` command to navigate to the tests directory titled `__tests__`._
+* _Run the command `npm test` in your command line._
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---  
 
-### `npm run eject`
+## ❗ Known Bugs/Issues
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+There are no known bugs or issues at this time. If you come across any, please let me know by [emailing me](mailto:zahnen@gmail.com).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## ❓ Support and Contact Details
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Zahnen Garner // zahnen@gmail.com
 
-## Learn More
+---  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 💻 Technologies Used
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+_This application required use of the following programs/languages/libraries to create:_
+- _[Microsoft Visual Studio Code](https://code.visualstudio.com/)_
+- _[Git/GitHub](https://github.com/)_
+- _[React](https://reactjs.org/)_
+- _[JavaScript](https://www.w3schools.com/js/js_es6.asp)_
+- _[JSX](https://reactjs.org/docs/introducing-jsx.html)_
+- _[npm](https://www.npmjs.com/)_
+- _[Node.Js](https://nodejs.org/en/)_
+- _[Jest](https://jestjs.io/)_
+- _[Redux](https://redux.js.org/)_
+- _[Babel](https://babeljs.io/)_
+- _[ES Lint](https://eslint.org/)_
+- _[Bootstrap](https://getbootstrap.com/)_
+- _[CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS)_
+- _For a full list of packages/dependencies, feel free to have a look in the file titled package.json_
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---  
 
-### Analyzing the Bundle Size
+## 📃  License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+*Licensed under MIT*
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Copyright (c) 2020 Zahnen Garner
