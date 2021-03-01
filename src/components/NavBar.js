@@ -1,14 +1,16 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import Logo from './../img/Sous.png';
+
 
 
 function NavBar() {
 
   return(
     <React.Fragment>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand as={Link} to="/">Sous Chef</Navbar.Brand>
+      <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
+        <Navbar.Brand as={Link} to="/"><img src={Logo} alt="Sous Chef Logo"></img></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
