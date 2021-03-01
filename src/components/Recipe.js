@@ -6,8 +6,8 @@ function Recipe(props){
   return (
     <>
       <div onClick = {() => props.onRecipeSelection(props.id)}>
-        <h2>{props.title}</h2>
-        <h1>{props.author}</h1>
+        <h1>{props.title}</h1>
+        <h2>{props.author}</h2>
         <p>{props.ingredients}</p>
         <p>{props.instructions}</p>
       </div>

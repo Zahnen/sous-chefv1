@@ -119,9 +119,11 @@ class RecipeControl extends React.Component {
 
       return(
         <>
-          <button style={{float: 'right', marginBottom: '30px'}} onClick={this.handleClick} className='btn btn-warning'>{buttonText}</button>
-          <br/>
-          {currentState}
+          <div className="container">
+            <button style={{float: 'right', marginBottom: '30px'}} onClick={this.handleClick} className='btn btn-warning'>{buttonText}</button>
+            <br/>
+            {currentState}
+          </div>
         </>
       );
     }
