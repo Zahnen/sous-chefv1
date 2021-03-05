@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Form, Button } from 'react-bootstrap';
 import { useFirestore } from 'react-redux-firebase';
+import firebase from "firebase/app";
+
 
 
 function NewRecipeForm(props){
+  const auth = useState(firebase.auth())
   const firestore = useFirestore();
   function addRecipeToFirestore(event) {
     event.preventDefault();
@@ -14,7 +17,8 @@ function NewRecipeForm(props){
         title: event.target.title.value,
         author: event.target.author.value,
         ingredients: event.target.ingredients.value,
-        instructions: event.target.instructions.value
+        instructions: event.target.instructions.value,
+        userId: auth[0].currentUser.uid
       }
     );
   }
