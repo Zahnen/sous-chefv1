@@ -40,4 +40,9 @@
 
 5:00PM - Batch/push commits from weekend work
 
+### March 5th, 2021
+
+8:00AM - Begin to consider best way to input ingredients + store them in firebase, watch firebase tutorials
+
+
 
