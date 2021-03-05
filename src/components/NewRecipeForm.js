@@ -9,6 +9,10 @@ import firebase from "firebase/app";
 function NewRecipeForm(props){
   const auth = useState(firebase.auth())
   const firestore = useFirestore();
+
+  function getItemsFromTextArea(str) {
+		return str.split(",").map(x => x.trim());
+	}
   function addRecipeToFirestore(event) {
     event.preventDefault();
     props.onRecipeAdd();
@@ -16,8 +20,8 @@ function NewRecipeForm(props){
       {
         title: event.target.title.value,
         author: event.target.author.value,
-        ingredients: event.target.ingredients.value,
-        instructions: event.target.instructions.value,
+        ingredients: getItemsFromTextArea(event.target.ingredients.value),
+        instructions: getItemsFromTextArea(event.target.instructions.value),
         userId: auth[0].currentUser.uid
       }
     );
@@ -43,14 +47,14 @@ function NewRecipeForm(props){
           <Form.Group>
             <Form.Label>Ingredients</Form.Label>
             <Form.Control
-              type="text"
+              as="textarea"
               name="ingredients"
               placeholder="Ingredients" />
           </Form.Group>
           <Form.Group>
             <Form.Label>Instructions</Form.Label>
             <Form.Control
-              type="text"
+              as="textarea"
               name="instructions"
               placeholder="Instructions" />
           </Form.Group>

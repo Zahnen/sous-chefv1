@@ -3,13 +3,16 @@ import PropTypes from "prop-types";
 
 
 function Recipe(props){
+
+  const ingredientsList = props.ingredients.map((item) => <li>{item}</li>);
+  const instructionsList = props.instructions.map((item) => <li>{item}</li>);
   return (
     <>
       <div onClick = {() => props.onRecipeSelection(props.id)}>
         <h1>{props.title}</h1>
         <h2>{props.author}</h2>
-        <p>{props.ingredients}</p>
-        <p>{props.instructions}</p>
+        <ul>{ingredientsList}</ul>
+        <ul>{instructionsList}</ul>
       </div>
     </>
   )
@@ -18,8 +21,8 @@ function Recipe(props){
 Recipe.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
-  ingredients: PropTypes.string,
-  instructions: PropTypes.string,
+  ingredients: PropTypes.array,
+  instructions: PropTypes.array,
   onRecipeSelection: PropTypes.func
 };
 
