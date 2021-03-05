@@ -82,21 +82,21 @@ class RecipeControl extends React.Component {
 
   render(){
     const auth = this.props.firebase.auth();
-    // if (!isLoaded(auth)) {
-    //   return (
-    //     <>
-    //       <h1>Loading...</h1>
-    //     </>
-    //   )
-    // }
-    // if ((isLoaded(auth)) && (auth.currentUser == null)) {
-    //   return (
-    //     <>
-    //       <h1>You must be signed in to access Sous Chef.</h1>
-    //     </>
-    //   )
-    // }
-    if (isLoaded(auth)) { //user auth check goes back here
+    if (!isLoaded(auth)) {
+      return (
+        <>
+          <h1>Loading...</h1>
+        </>
+      )
+    }
+    if ((isLoaded(auth)) && (auth.currentUser == null)) {
+      return (
+        <>
+          <h1>You must be signed in to access Sous Chef.</h1>
+        </>
+      )
+    }
+    if (isLoaded(auth) && (auth.currentUser != null)) {
       let currentState = null;
       let buttonText = null;
       if (this.props.editing){
