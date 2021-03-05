@@ -2,10 +2,18 @@ import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import Logo from './../img/Sous.png';
-
+import firebase from "firebase/app";
 
 
 function NavBar() {
+
+  function doSignOut() {
+    firebase.auth().signOut().then(function() {
+      console.log("Successfully signed out!");
+    }).catch(function(error) {
+      console.log(error.message);
+    });
+  }
 
   return(
     <React.Fragment>
@@ -18,7 +26,7 @@ function NavBar() {
           </Nav>
           <Nav className="ml-auto">
             <Nav.Link as={Link} to="/signin">Sign In</Nav.Link>
-            <Nav.Link>Sign Out</Nav.Link>
+            <Nav.Link onClick={doSignOut}>Sign Out</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
