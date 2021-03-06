@@ -4,6 +4,8 @@ import {Row, Col, Button} from "react-bootstrap";
 
 function RecipeDetail(props){
   const { recipe } = props;
+  const ingredientsList = recipe.ingredients.map((item, index) => <li key={index}>{item}</li>);
+  const instructionsList = recipe.instructions.map((item, index) => <li key={index}>{item}</li>);
   return (
     <>
       <h1>{recipe.title}</h1>
@@ -12,10 +14,10 @@ function RecipeDetail(props){
           <p>PlaceHolder {recipe.author}</p>
         </Col>
         <Col>
-        <p>PlaceHolder {recipe.ingredients}</p>
+        <ul>{ingredientsList}</ul>
         </Col>
         <Col>
-        <p>PlaceHolder {recipe.instructions}</p>
+        <ul>{instructionsList}</ul>
         <Button onClick={ props.onClickingEdit } variant="warning">Update Recipe</Button>{' '}
         <Button onClick={()=> props.onClickingDelete(recipe.id) } variant="danger">Delete Recipe</Button>
         </Col>
