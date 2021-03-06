@@ -44,5 +44,24 @@
 
 8:00AM - Begin to consider best way to input ingredients + store them in firebase, watch firebase tutorials
 
+9:00AM - finish implementing sign in/up/out functionality
 
+9:30AM - add functionality for tracking author/user ID with recipe input
 
+10:00AM - pivot back to recipe input/look into clean ways to add multiple items into an array with a form, display those items
+
+11:00AM - Successfully implement splitting textarea for instructions/ingredients, displaying items from these arrays as lists
+
+11:30AM - spin in chair, try to decide direction to move in next...
+
+11:45AM - begin to look at image uploading in react/storage in firebase
+
+12:00pm - break for lunch
+
+1:00PM - return from lunch, begin to watch tutorials on image uploading with firebase storage
+
+2:00PM - break for information interview with a senior dev at Causebox
+
+3:00PM - return to photo upload attempt. Receiving errors ("firebase.storage is not a function) when trying to import storage from firebase.
+
+4:00PM - still working on photo upload, feeling impossible but I'm determined!
