@@ -65,3 +65,7 @@
 3:00PM - return to photo upload attempt. Receiving errors ("firebase.storage is not a function) when trying to import storage from firebase.
 
 4:00PM - still working on photo upload, feeling impossible but I'm determined!
+
+8:00pm - FINALLY GOT A PHOTO TO UPLOAD TO FIREBASE STORAGE!!!!!!! This has taken me...literally all day, and I am so relieved to have it finished finally. Begin to work on getting uploaded image URL from storage to store as field of recipe
+
+10:00PM - continue working to get URL from firebase storage, running into a lot of memory leak warnings/errors from console. Explore useEffect.
