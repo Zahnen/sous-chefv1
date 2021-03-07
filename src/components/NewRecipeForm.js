@@ -4,47 +4,55 @@ import { Form, Button } from 'react-bootstrap';
 import { useFirestore } from 'react-redux-firebase';
 import firebase from "firebase/app";
 
-
 function NewRecipeForm(props){
   const auth = useState(firebase.auth());
   const firestore = useFirestore();
+  const [image, setImage] = useState(null);
+  const [url, setUrl] = useState("");
 
   function getItemsFromTextArea(str) {
 		return str.split(",").map(x => x.trim());
 	}
 
-  function uploadImage(file) {
-    const ref = firebase.storage().ref("images").child(`${file.name}`);
-    ref.put(file)
-    .then((snapshot) => {
-      console.log('Uploaded a blob or file!');
-    });
-  }
+  const handleChange = e => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
 
-  function getImageURL(image) {
-    const url = firebase.storage().ref("images").child(`${image.name}`).getDownloadURL();
-    // console.log(url);
-    return url;
-  }
 
   function addRecipeToFirestore(event) {
     event.preventDefault();
-    const imageToUpload = event.target.image.files[0];
-    uploadImage(imageToUpload);
-    let url = getImageURL(imageToUpload);
-    console.log(url);
-    props.onRecipeAdd();
-    return firestore.collection('recipes').add(
-      {
-        title: event.target.title.value,
-        author: event.target.author.value,
-        ingredients: getItemsFromTextArea(event.target.ingredients.value),
-        instructions: getItemsFromTextArea(event.target.instructions.value),
-        img: event.target.image.value,
-        userId: auth[0].currentUser.uid
+    const ref = firebase.storage().ref("images").child(`${image.name}`);
+    const uploadTask = ref.put(image);
+    uploadTask.on(
+      "state_changed",
+      snapshot => {},
+      error => {
+        console.log(error);
+      },
+      () => {
+        firebase.storage()
+        .ref("images")
+        .child(image.name)
+        .getDownloadURL()
+        .then( url => {
+          setUrl(url);
+          })
+        .then(firestore.collection('recipes').add(
+          {
+            title: event.target.title.value,
+            author: event.target.author.value,
+            ingredients: getItemsFromTextArea(event.target.ingredients.value),
+            instructions: getItemsFromTextArea(event.target.instructions.value),
+            imgURL: url,
+            userId: auth[0].currentUser.uid
+          }
+          ))
+        }
+      );
+      // props.onRecipeAdd();
       }
-    );
-  }
   return (
     <>
       <div className="container" style={{width: '48rem'}}>
@@ -81,6 +89,7 @@ function NewRecipeForm(props){
             <Form.Label>Image</Form.Label>
             <Form.Control
               type="file"
+              onChange={handleChange}
               name="image"
               placeholder="Title" />
           </Form.Group>
@@ -98,3 +107,38 @@ NewRecipeForm.propTypes = {
 };
 
 export default NewRecipeForm;
+// const imageToUpload = event.target.image.files[0];
+// uploadImage(imageToUpload);
+
+
+//new
+// const handleUpload = (event) => {
+  //   event.preventDefault();
+  //   const ref = firebase.storage().ref("images").child(`${image.name}`);
+  //   const uploadTask = ref.put(image);
+  //   uploadTask.on(
+    //     "state_changed",
+    //     snapshot => {},
+//     error => {
+//       console.log(error);
+//     },
+//     () => {
+//       ref
+//         .getDownloadURL()
+//         .then(url => {
+//           setUrl(url);
+//           console.log(url);
+//         });
+//     }
+//   );
+// };
+
+// function uploadImage(file) {
+//   const ref = firebase.storage().ref("images").child(`${file.name}`);
+//   ref.put(file)
+//   .then((snapshot) => {
+//     ref.getDownloadURL().then(function(url){
+//       setUrl(url);
+//     });
+//   });
+// }
