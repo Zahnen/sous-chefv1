@@ -9,6 +9,7 @@ function RecipeDetail(props){
   return (
     <>
       <h1>{recipe.title}</h1>
+      <img src={recipe.imgURL} width="180" alt="Finished Product"></img>
       <Row>
         <Col>
           <p>PlaceHolder {recipe.author}</p>

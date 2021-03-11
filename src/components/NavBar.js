@@ -21,8 +21,11 @@ function NavBar() {
         <Navbar.Brand as={Link} to="/"><img src={Logo} alt="Sous Chef Logo"></img></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
+          <Nav>
             <Nav.Link as={Link} to="/">Home</Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link as={Link} to="/myrecipes">My Recipes</Nav.Link>
           </Nav>
           <Nav className="ml-auto">
             <Nav.Link as={Link} to="/signin">Sign In</Nav.Link>

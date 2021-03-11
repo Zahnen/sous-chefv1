@@ -21,10 +21,12 @@ class RecipeControl extends React.Component {
       const firestoreRecipe = {
         title: recipe.get("title"),
         author: recipe.get("author"),
+        imgURL: recipe.get("imgURL"),
         ingredients: recipe.get("ingredients"),
         instructions: recipe.get("instructions"),
         id: recipe.id
       }
+      console.log(firestoreRecipe);
       const action = a.selectRecipe(firestoreRecipe);
       dispatch(action);
     });
@@ -45,6 +47,7 @@ class RecipeControl extends React.Component {
       const firestoreRecipe = {
         title: recipe.get("title"),
         author: recipe.get("author"),
+        imgURL: recipe.get("imgURL"),
         ingredients: recipe.get("ingredients"),
         instructions: recipe.get("instructions"),
         id: recipe.id
@@ -82,21 +85,21 @@ class RecipeControl extends React.Component {
 
   render(){
     const auth = this.props.firebase.auth();
-    if (!isLoaded(auth)) {
-      return (
-        <>
-          <h1>Loading...</h1>
-        </>
-      )
-    }
-    if ((isLoaded(auth)) && (auth.currentUser == null)) {
-      return (
-        <>
-          <h1>You must be signed in to access Sous Chef.</h1>
-        </>
-      )
-    }
-    if (isLoaded(auth) && (auth.currentUser != null)) {
+    // if (!isLoaded(auth)) {
+    //   return (
+    //     <>
+    //       <h1>Loading...</h1>
+    //     </>
+    //   )
+    // }
+    // if ((isLoaded(auth)) && (auth.currentUser == null)) {
+    //   return (
+    //     <>
+    //       <h1>You must be signed in to access Sous Chef.</h1>
+    //     </>
+    //   )
+    // }
+    if (isLoaded(auth)){ // && (auth.currentUser != null))
       let currentState = null;
       let buttonText = null;
       if (this.props.editing){

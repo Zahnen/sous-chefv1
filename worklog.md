@@ -69,3 +69,15 @@
 8:00pm - FINALLY GOT A PHOTO TO UPLOAD TO FIREBASE STORAGE!!!!!!! This has taken me...literally all day, and I am so relieved to have it finished finally. Begin to work on getting uploaded image URL from storage to store as field of recipe
 
 10:00PM - continue working to get URL from firebase storage, running into a lot of memory leak warnings/errors from console. Explore useEffect.
+
+
+### March 6th, 2021
+
+
+9:30AM-12:00PM - spent the entire morning trying to get the image URL from firebase storage. Seems to be an issue with trying to get the URL before the image has finished uploading
+
+4:00PM - still working on URL from firebase storage....I've aged 20 years in the last 7 hours
+
+9:34 - making progress. I'm now able to get the URL if I don't have the submit button redirect from the form, however this isn't an elegant solution...
+
+### March 6th, 2021

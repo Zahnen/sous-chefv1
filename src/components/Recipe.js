@@ -17,6 +17,7 @@ function Recipe(props){
 Recipe.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
+  imgURL: PropTypes.string,
   ingredients: PropTypes.array,
   instructions: PropTypes.array,
   onRecipeSelection: PropTypes.func

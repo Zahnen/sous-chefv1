@@ -9,6 +9,7 @@ function NewRecipeForm(props){
   const firestore = useFirestore();
   const [image, setImage] = useState(null);
   const [url, setUrl] = useState("");
+  const [progress, setProgress] = useState(0);
 
   function getItemsFromTextArea(str) {
 		return str.split(",").map(x => x.trim());
@@ -20,14 +21,16 @@ function NewRecipeForm(props){
     }
   };
 
-
   function addRecipeToFirestore(event) {
     event.preventDefault();
     const ref = firebase.storage().ref("images").child(`${image.name}`);
     const uploadTask = ref.put(image);
     uploadTask.on(
       "state_changed",
-      snapshot => {},
+      snapshot => { const progress = Math.round(
+        (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+      );
+      setProgress(progress);},
       error => {
         console.log(error);
       },
@@ -93,6 +96,7 @@ function NewRecipeForm(props){
               name="image"
               placeholder="Title" />
           </Form.Group>
+          <progress value={progress} max="100" />
           <Button variant="success" type="submit">Add Recipe</Button>
         </Form>
       </div>
